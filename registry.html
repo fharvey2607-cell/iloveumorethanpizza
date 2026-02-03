@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i love you more than pizza - 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background-color: #0000000;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+        }
+
+        .bg-container {
+            position: fixed;
+            top: -10%; left: -10%; width: 120%; height: 120%;
+            background: url('https://i.pinimg.com/1200x/7d/db/ba/7ddbba573a0e3d6e058fb084e8fcec72.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            animation: slowDrift 25s ease-in-out infinite alternate;
+        }
+
+        @keyframes slowDrift {
+            from { transform: scale(1) translate(0, 0); }
+            to { transform: scale(1.1) translate(-3%, -2%); }
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        #entry-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            cursor: pointer;
+            transition: opacity 1s ease;
+        }
+
+        #main-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0;
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity 2.5s ease;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 600px;
+            box-shadow: 0 0 60px rgba(0, 162, 255, 0.25);
+        }
+
+        .message { font-size: 1.4rem; font-style: italic; margin-bottom: 25px; line-height: 1.6; }
+
+        .img-wrapper { position: relative; margin-bottom: 25px; }
+
+        .certificate-img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.4);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .pass-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .pass-wrapper { position: relative; width: calc(50% - 7.5px); }
+
+        .pass-img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dl-icon {
+            display: block;
+            margin-top: 8px;
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .dl-icon:hover { opacity: 1; text-decoration: underline; }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #00d4ff;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        #lightbox img { max-width: 90%; max-height: 85%; border-radius: 10px; }
+        #lightbox.active { display: flex; }
+    </style>
+</head>
+<body>
+
+    <div id="entry-screen" onclick="startExperience()">
+        <p style="letter-spacing: 6px; font-size: 0.8rem; font-weight: bold;">[ Happy Valentines <3 ]</p>
+    </div>
+
+    <div class="bg-container"></div>
+    <div class="overlay"></div>
+
+    <div id="main-content">
+        <div class="container">
+            <p class="message">
+                "From the depths of the sea to the light of the stars, <br> I love you saso <3"
+            </p>
+
+            <div class="img-wrapper">
+                <img src="star.jpg" class="certificate-img" onclick="openLightbox(this.src)">
+                <a href="star.jpg" download class="dl-icon">↓ DOWNLOAD STAR ARCHIVE</a>
+            </div>
+
+            <div class="pass-container">
+                <div class="pass-wrapper">
+                    <img src="Saso_pass.jpg" class="pass-img" onclick="openLightbox(this.src)">
+                    <a href="Saso_pass.jpg" download class="dl-icon">↓ SAVE SASO_PASS</a>
+                </div>
+                <div class="pass-wrapper">
+                    <img src="fin_pass.jpg" class="pass-img" onclick="openLightbox(this.src)">
+                    <a href="fin_pass.jpg" download class="dl-icon">↓ SAVE FIN_PASS</a>
+                </div>
+            </div>
+
+            <a href="https://www.staracle.co.uk/staracle/staracle.php?Tycho=10088939171" target="_blank" class="btn">
+                VIEW STAR DIRECTORY
+            </a>
+            
+            <p style="margin-top: 20px; font-size: 0.7rem; opacity: 0.5;">STARKEEPER ID: colocolo-13 // 14.02.26</p>
+        </div>
+    </div>
+
+    <div id="lightbox" onclick="closeLightbox()"><img id="lightbox-img" src=""></div>
+
+    <audio id="bg-music" loop><source src="your-music-file.mp3" type="audio/mpeg"></audio>
+
+    <script>
+        function startExperience() {
+            const music = document.getElementById('bg-music');
+            music.play().catch(e => console.log(e));
+            document.getElementById('entry-screen').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('entry-screen').style.display = 'none';
+                document.getElementById('main-content').style.opacity = '1';
+                document.body.style.overflowY = "auto";
+            }, 1000);
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflowY = "auto";
+        }
+    </script>
+</body>
+</html>
